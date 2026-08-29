@@ -38,3 +38,11 @@ Built with a Playwright `toHaveScreenshot` comparison at 1024×768,
 threshold 0.03, where the *expected* image is the mockup itself rather
 than a snapshot of the app. A screenshot test that compares an app to a
 picture of that same app always passes; this one can fail.
+
+The picture is one of seven checks on this screen. The others read the
+question's content, measure every box against the SVG's own coordinates,
+read the computed colour and font of every part, hold the 64px touch
+floor, and press each control to prove none of them is dead — because
+the pixel budget has to be loose enough to survive Linux rasterising the
+fonts differently, and a budget that loose would not notice one counter
+turning the wrong colour.
