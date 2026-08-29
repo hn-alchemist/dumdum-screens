@@ -46,3 +46,19 @@ floor, and press each control to prove none of them is dead — because
 the pixel budget has to be loose enough to survive Linux rasterising the
 fonts differently, and a budget that loose would not notice one counter
 turning the wrong colour.
+
+### The same screen at other sizes
+
+The frame is a fixed 1024×768 canvas scaled to fit, so nothing can
+reflow into a layout nobody drew. Everything is present and centred at
+every size — but the targets scale down with it, and below the design
+size they fall under the 64px floor a child's finger needs.
+
+| iPad portrait 768×1024 | phone 390×844 |
+|---|---|
+| ![portrait](01-question/sizes/tablet-portrait.png) | ![phone](01-question/sizes/phone.png) |
+
+Smallest control: **67px** at 1024×768, **50px** in portrait, **26px** on
+a phone. That is why this frame is on a design route and is not wired
+into the app yet: it is a real blocker, written down, not a surprise
+waiting for a child.
