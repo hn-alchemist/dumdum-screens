@@ -23,12 +23,25 @@ edge landing half a pixel differently.
 
 | screen | difference | of 786,432 pixels |
 |---|---|---|
-| 01 — a question | **493** | 0.063% |
-| 02 — one miss later | **1,133** | 0.144% |
-| 03 — who's playing | **238** | 0.030% |
-| 04 — finished for today | **119** | 0.015% |
+| 01 — a question | **615** | 0.078% |
+| 02 — one miss later | **1,255** | 0.160% |
+| 03 — who's playing | **386** | 0.049% |
+| 04 — finished for today | **181** | 0.023% |
 
 ---
+
+## Why the answer cards sit where they do
+
+The answer row used to clear the 115px band where a child rests a wrist
+by **1.5px** — a coincidence, not a margin — and answers commit the
+moment a finger lands. On a real iPad in Safari, where the toolbar
+leaves 1024x694, that put the cards *inside* the band.
+
+The lower half of 01 and 02 is lifted 14px, which is as far as it can go
+before 02's three-line bubble is in the way. It now clears by 15px at
+the drawn size and 3px on a real iPad. A 1024x600 tablet is still
+inside, and fixing that means redrawing the composition rather than
+nudging it.
 
 ## 01 — the Year 2 question screen
 
@@ -58,7 +71,9 @@ to ten is 10 minus 8.
 
 One big card per child: a face to recognise before you can read the
 name. The faces are art slots — a coloured disc until real avatars
-exist.
+exist. It has a speaker now: the drawing had none, which made it the one
+child screen where a child who cannot read had no way to hear the
+question.
 
 | the drawing | the build | the difference |
 |---|---|---|
